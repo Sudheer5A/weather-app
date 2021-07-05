@@ -22,7 +22,7 @@
           class="search-bar"
           placeholder="Enter location..."
           v-model="query"
-          @keypress="fetchWeather"
+          @keyup.enter="fetchWeather"
         />
         <img class="location-search" src="./assets/search-solid.svg" alt="" />
       </div>
@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     fetchWeather(e) {
-      if (e.key == "Enter") {
+     
         fetch(
           `${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`
         )
@@ -72,7 +72,7 @@ export default {
             return res.json();
           })
           .then(this.setResults);
-      }
+      
     },
     setResults(results) {
       this.weather = results;
