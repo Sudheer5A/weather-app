@@ -1,5 +1,10 @@
 # weather
 
+For usage create a '.env' file in your root directory and add a API KEY. You should add like below
+
+ VUE_APP_APIKEY= YOUR API KEY HERE
+
+
 ## Project setup
 ```
 npm install
